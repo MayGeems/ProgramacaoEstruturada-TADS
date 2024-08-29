@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
+//não terminado
+
 int main (void){
     int n;
 
