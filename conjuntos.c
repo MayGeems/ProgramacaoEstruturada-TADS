@@ -1,33 +1,77 @@
 #include <stdio.h>
 #include <math.h>
+#define TAMANHO 5
 
-int diferenca(int x, int y){
-    int i,j;
-    int dife[5];
+int diferenca(){
+    int x[TAMANHO]={1,3,5,7,9};
+    int y[TAMANHO]={1,2,3,4,5};
+    int ix, iy;
+   
+   printf("Diferenca: ");
+    for (ix=0 ;ix<TAMANHO;ix++)
+    {
+     for (iy=0;iy<TAMANHO;iy++)
+        {
+            if (x[ix] == y[iy])
+               break;
+        }
+        if (iy == TAMANHO)
+           printf ("%d ", x[ix]);
+    }
+}
 
-    for(i=0; i<=5; i++){
-        for(j=0; j<=5; j++){
-            if(x[i]==y[j]){
-                dife[i]=x[i];
+int intersecao(){
+    int x[TAMANHO]={1,3,5,7,9};
+    int y[TAMANHO]={1,2,3,4,5};
+    int ix, iy;
+   
+   printf("\nIntersecao: ");
+    for (ix=0 ;ix<TAMANHO;ix++)
+    {
+     for (iy=0;iy<TAMANHO;iy++)
+        {
+            if (x[ix] == y[iy])
+               break;
+        }
+        if (iy != TAMANHO)
+           printf ("%d ", x[ix]);
+    }
+}
+
+int uniao(){
+    int x[TAMANHO]={1,3,5,7,9};
+    int y[TAMANHO]={1,2,3,4,5};
+    int uni[10];
+    int ux=0;
+    int ix, iy;
+   
+    printf("\nUniao: ");
+    for (ix=0 ;ix<TAMANHO;ix++){
+        uni[ux++] = x[ix];
+        for (iy=0;iy<TAMANHO;iy++){
+            int a = 0;
+            for (ix=0 ;ix<ux;ix++){
+                if(y[iy]==uni[ix]){
+                    a = 1;
+                    break;
+                }
+            }
+            if(a!=1){
+                uni[ux++] = y[iy];
             }
         }
     }
 
-    return dife;
+    for(ix=0;ix<ux;ix++){
+        printf("%d ", uni[ix]);
+    }
+
 }
 
 int main(void){
-    int x[5]={1,3,5,7,9};
-    int y[5]={1,2,3,4,5};
 
-    int dife = diferenca(x,y);
-    //intersecao(x,y);
-    //uniao(x,y);
-
-    int i;
-    
-    for(i=0; i<=5; i++){
-        printf("%d\t", dife[i]);
-    }
+    diferenca();
+    intersecao();
+    uniao();
     
 }
