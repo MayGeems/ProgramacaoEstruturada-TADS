@@ -48,17 +48,17 @@ int uniao(){
     printf("\nUniao: ");
     for (ix=0 ;ix<TAMANHO;ix++){
         uni[ux++] = x[ix];
-        for (iy=0;iy<TAMANHO;iy++){
-            int a = 0;
-            for (ix=0 ;ix<ux;ix++){
-                if(y[iy]==uni[ix]){
-                    a = 1;
-                    break;
-                }
+    }
+    for (iy=0;iy<TAMANHO;iy++){
+        int a = 0;
+        for (ix=0 ;ix<ux;ix++){
+            if(y[iy]==uni[ix]){
+                a = 1;
+                break;
             }
-            if(a!=1){
-                uni[ux++] = y[iy];
-            }
+        }
+        if(!a){
+            uni[ux++] = y[iy];
         }
     }
 
