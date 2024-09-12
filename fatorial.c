@@ -18,7 +18,7 @@ int main(){
         printf("Insira o %d numero: ", i+1);
         scanf("%d", &A[i]);
         B[i] = fat(A[i]);
-    }
+    } 
 
     printf("A\t");
     for(j=0;j<5;j++){
